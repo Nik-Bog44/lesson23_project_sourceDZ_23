@@ -3,7 +3,7 @@ def filter_query(param: str, data: list[str]) -> list[str]:
 
 
 def map_query(param: str, data: list[str]) -> list[str]:
-    col_number = list(param)
+    col_number = int(param)
     return list(map(lambda row: row.split(' ')[col_number], data))
 
 
@@ -39,8 +39,8 @@ CMD_TO_FUNCTION = {
 }
 
 
-def build_query(cmd, param, file_name, data=None):
+def build_query(cmd, param, filename, data=None):
     if not data:
-        with open(f'data/{file_name}') as file:
+        with open(f'data/{filename}') as file:
             data = list(map(lambda row: row.strip(), file))
     return CMD_TO_FUNCTION[cmd](param=param, data=data)
