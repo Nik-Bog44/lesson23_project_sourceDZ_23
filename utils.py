@@ -1,3 +1,4 @@
+
 def filter_query(param: str, data: list[str]) -> list[str]:
     return list(filter(lambda row: param in row, data))
 
@@ -34,7 +35,7 @@ CMD_TO_FUNCTION = {
     'map': map_query,
     'unique': unique_query,
     'sort': sort_query,
-    'limit': limit_query
+    'limit': limit_query,
 
 }
 
